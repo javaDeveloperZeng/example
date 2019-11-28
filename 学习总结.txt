@@ -4,6 +4,12 @@
 4.druid 防止sql注入方法。
 5.Session共享。
 6.日志记录。
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/javaDeveloperZeng/example.git
+git push -u origin master
+
 
 https://www.cnblogs.com/flora5/p/7152556.html
 ssh-keygen -t rsa -C "1729817647@qq.com" 
