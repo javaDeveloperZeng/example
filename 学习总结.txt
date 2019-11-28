@@ -1,0 +1,13 @@
+1.postman、jmeter(Apache) 并发测试工具。
+2.lombok  get set @slf4j添加日志。
+3.mybatis plus 插件 mybatisx 快速定位xml中方法。
+4.druid 防止sql注入方法。
+5.Session共享。
+6.日志记录。
+
+https://www.cnblogs.com/flora5/p/7152556.html
+ssh-keygen -t rsa -C "1729817647@qq.com" 
+
+git config --global user.name  "javaDeveloperZeng"
+git config --global user.email "1729817647@qq.com"
+$ git remote add origin git@github.com:flora0103/example.git    //关联一个远程库命令， git@github.com:flora0103/example.git   这个是自己远程库
