@@ -30,7 +30,10 @@ public class TestController {
     UserService userService;
     @Autowired
     UserServiceTwo userServiceTwo;
-
+    @Test
+    public void test(){
+        userService.test1();
+    }
     @Test
     @Transactional(isolation = Isolation.REPEATABLE_READ)
     public void testMethod(){
@@ -41,15 +44,19 @@ public class TestController {
         }else {
             System.out.println(result.get(0).get("id"));
         }*/
+try{
+    jdbcTemplate.execute("insert user (id,userName,passWord,realName) " +
+            "values ('1','a','b','c')");
+    System.out.println("<---数据插入-->");
+}catch (Exception e){
+    e.printStackTrace();
+}
 
-        jdbcTemplate.execute("insert user (id,userName,passWord,realName) " +
-                "values ('1','a','b','c')");
-        System.out.println("<---数据插入-->");
-        try {
+       /* try {
             new Thread().sleep(60000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         System.out.println("<---事物提交-->");
 
 //        userServiceTwo.updateUser();

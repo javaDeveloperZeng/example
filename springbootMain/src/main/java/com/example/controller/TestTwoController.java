@@ -34,21 +34,15 @@ public class TestTwoController {
     public void testMethodTwo(){
 
         userService.selectUser();
+
+
     }
     @Test
-    @Transactional(isolation = Isolation.REPEATABLE_READ)
-    @Rollback(false)
     public void testMethod(){
-//        userService.insertUser();
-        List<Map<String,Object>> result=jdbcTemplate.queryForList("select * from user where id='1'");
-        if(result.isEmpty()){
-            System.out.println("result无值");
-        }else {
-            System.out.println(result.get(0).get("id"));
-        }
+        userServiceTwo.test11();
 
       /*  jdbcTemplate.execute("insert user (id,userName,passWord,realName) " +
-                "values ('1','a','b','c')");*/
+                "values ('1','a','b','c')");*//*
         try {
             new Thread().sleep(60000);
         } catch (InterruptedException e) {
@@ -60,7 +54,7 @@ public class TestTwoController {
             System.out.println("result无值");
         }else {
             System.out.println(result2.get(0).get("id"));
-        }
+        }*/
         /*userServiceTwo.updateUser();
         logger.debug("执行成功");*/
     }

@@ -3,12 +3,11 @@ package com.example.service;
 import com.example.dao.UserMapper;
 import com.example.po.User;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.ehcache.transaction.xa.EhcacheXAException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
@@ -17,7 +16,7 @@ import java.util.Map;
 
 @Service
 @Slf4j
-public class UserService {
+public class UserServiceThree {
     @Autowired
     UserMapper userMapper;
     @Autowired
@@ -29,13 +28,11 @@ public class UserService {
         userServiceTwo.selectUser();
     }
   @Transactional
-  public void test1(){
+    public void test1(){
         //子1
         insetData();
-      /*//子2
+      //子2
         userServiceTwo.updateData();
-
-        int i=1/0;*/
     }
     @Transactional(isolation = Isolation.REPEATABLE_READ)
     public void insertUser(){
@@ -61,10 +58,6 @@ public class UserService {
         jdbcTemplate.execute("insert user (id,userName,passWord,realName) " +
                 "values ('1','a','b','c')");
         System.out.println("子1执行完");
-
-            userServiceTwo.insetData2();
-
-
     }
     public User findUserById(int id){
         return userMapper.findUserById(id);
@@ -82,6 +75,6 @@ public class UserService {
         jdbcTemplate.execute("insert user (id,userName,passWord,realName) " +
                 "values ('2','abc','b','c')");
         System.out.println("孙1inset执行完");
-        throw new RuntimeException("updateData");
+       int i=1/0;
     }
 }
