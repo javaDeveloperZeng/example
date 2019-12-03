@@ -20,13 +20,13 @@ public class UserServiceTwo {
     public void updateUser(){
         jdbcTemplate.update("update user set userName='ww' where id='1'");
     }
-    @Transactional(isolation=Isolation.READ_COMMITTED)
+    @Transactional(isolation=Isolation.READ_UNCOMMITTED)
     public void selectUser(){
         List<Map<String,Object>> result=jdbcTemplate.queryForList("select * from user where id='1'");
         if(result.isEmpty()){
             System.out.println("result无值");
         }else {
-            System.out.println(result.get(0).get("id"));
+            System.out.println("读出来的数据"+result.get(0).get("id"));
         }
     }
 

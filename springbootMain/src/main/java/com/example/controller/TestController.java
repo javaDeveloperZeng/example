@@ -33,7 +33,6 @@ public class TestController {
 
     @Test
     @Transactional(isolation = Isolation.REPEATABLE_READ)
-    @Rollback(false)
     public void testMethod(){
 //        userService.insertUser();
       /*  List<Map<String,Object>> result=jdbcTemplate.queryForList("select * from user where id='1'");
@@ -51,6 +50,7 @@ public class TestController {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println("<---事物提交-->");
 
 //        userServiceTwo.updateUser();
        /* List<Map<String,Object>> result2=jdbcTemplate.queryForList("select * from user where id='1'");

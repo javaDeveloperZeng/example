@@ -22,7 +22,7 @@ public class UserService {
     JdbcTemplate jdbcTemplate;
     @Autowired
     UserServiceTwo userServiceTwo;
-    @Transactional(isolation =Isolation.READ_UNCOMMITTED )
+    @Transactional
     public void selectUser(){
         userServiceTwo.selectUser();
     }

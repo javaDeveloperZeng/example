@@ -20,3 +20,7 @@ ssh-keygen -t rsa -C "1729817647@qq.com"
 git config --global user.name  "javaDeveloperZeng"
 git config --global user.email "1729817647@qq.com"
 $ git remote add origin git@github.com:flora0103/example.git    //关联一个远程库命令， git@github.com:flora0103/example.git   这个是自己远程库
+
+
+
+1111111111

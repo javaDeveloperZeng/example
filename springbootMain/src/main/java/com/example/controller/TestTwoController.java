@@ -32,6 +32,7 @@ public class TestTwoController {
     UserServiceTwo userServiceTwo;
     @Test
     public void testMethodTwo(){
+
         userService.selectUser();
     }
     @Test
